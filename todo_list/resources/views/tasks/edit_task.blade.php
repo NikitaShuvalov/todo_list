@@ -7,7 +7,7 @@
 @section("content")
     <h1>Edit task</h1>
     <hr>
-    <form action="/edit/{{$task->id}}" method="post">
+    <form action="/dashboard/edit/{{$task->id}}" method="post">
         @csrf
         <span>Title:</span>
         <input type="text" value="{{ $task->title }}" name="title" class="form-control"><br>

@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::all();
+        $user_id = Auth::user();
+
+        $tasks = Task::find($user_id);
 
         return view("tasks.tasks", compact("tasks"));
     }

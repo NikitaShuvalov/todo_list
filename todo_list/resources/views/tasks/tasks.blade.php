@@ -7,8 +7,9 @@
 @section("content")
     <h1>Tasks</h1>
     <hr>
-    <form action="/tasks" method="post">
+    <form action="/dashboard/tasks" method="post">
         @csrf
+        <input type="hidden" name="{{auth()->user()->id}}">
         <span>Title:</span>
         <input type="text" name="title" class="form-control"><br>
         <span>Description:</span>
@@ -21,7 +22,7 @@
             <div>
                 <span>ID: {{$task->id}}</span><br>
                 <span>Title:</span> {{ $task->title }}<br> <span>Description:</span> {{$task->description}} <input name="completed" type="checkbox">
-                <a href="/edit/{{$task->id}}">edit</a> <a href="/delete/{{$task->id}}" class="text-danger">delete</a></div>
+                <a href="/dashboard/edit/{{$task->id}}">edit</a> <a href="/dashboard/delete/{{$task->id}}" class="text-danger">delete</a></div>
             <hr>
         @endforeach
     </div>

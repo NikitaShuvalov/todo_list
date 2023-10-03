@@ -27,6 +27,7 @@ class TaskController extends Controller
         $task = Task::create([
             "title" => $request->input("title"),
             "description" => $request->input("description"),
+            "user_id" => $request->input("user_id"),
         ]);
 
         return response()->json($task, 201);
