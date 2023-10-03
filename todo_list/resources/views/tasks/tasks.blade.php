@@ -18,7 +18,9 @@
     <hr>
     <div class="container">
         @foreach ($tasks as $task)
-            <div><span>Title:</span> {{ $task->title }}<br> <span>Description:</span> {{$task->description}} <input name="completed" type="checkbox">
+            <div>
+                <span>ID: {{$task->id}}</span><br>
+                <span>Title:</span> {{ $task->title }}<br> <span>Description:</span> {{$task->description}} <input name="completed" type="checkbox">
                 <a href="/edit/{{$task->id}}">edit</a> <a href="/delete/{{$task->id}}" class="text-danger">delete</a></div>
             <hr>
         @endforeach
