@@ -16,3 +16,8 @@ use \App\Http\Controllers\TaskController;
 
 Route::get("/tasks", [TaskController::class, "index"]);
 Route::post("/tasks", [\App\Http\Controllers\Api\TaskController::class, "store"]);
+
+Route::get("/edit/{id}", [TaskController::class, "edit"]);
+Route::post("/edit/{id}", [\App\Http\Controllers\Api\TaskController::class, "update"]);
+
+Route::get("/delete/{id}", [\App\Http\Controllers\Api\TaskController::class, "destroy"]);
